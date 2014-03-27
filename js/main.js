@@ -7,6 +7,16 @@ var counter =0;
 var thumbs = {
 	
 	titles: [numberOfItems],
+	
+	durations: [numberOfItems],
+	
+	convertTime: function(seconds){
+		var m = Math.floor(seconds/60);
+		var s = Math.ceil(seconds%60);
+		var result = m  + ":" + (s  < 10 ? "0" + s : s);
+
+		return  result;
+	},
 		
 	loadUrl: function(){
 		
@@ -41,9 +51,10 @@ var thumbs = {
   				url: "http://gdata.youtube.com/feeds/api/videos/"+videoId+"?v=2&alt=jsonc",
 				dataType: "json",
   				success: function(info){
+					thumbs.durations[i] = info.data.duration;
 					thumbs.titles[i] = info.data.title;
 					thumbs.titles[counter++] = info.data.title;
-					$('div.preview-container div.video:eq('+i+')').find('div.details span.title').html(thumbs.titles[i]);
+					$('div.preview-container div.video:eq('+i+')').find('div.details span.title').html(thumbs.convertTime(thumbs.durations[i]) +"<br />"+ thumbs.titles[i]);
 				},
 					error: function(jqXHR, textStatus, errorThrown) {
         			console.log(jqXHR.getResponseHeader("content-type"));

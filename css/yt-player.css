@@ -1,4 +1,4 @@
-.body{
+body{
 	font-family:Verdana,Arial,Helvetica,sans-serif;
 	font-size: 0.75em;
 	margin: 0;
@@ -35,7 +35,7 @@
 	width:554px;
 	margin-top:5px;
 	overflow:auto;
-	height:342px;
+	height:267px;
 	border: 1px solid #666;
 	padding: 0 0 0 4px;
 	overflow-x: hidden;
@@ -47,7 +47,7 @@
 
 .container .preview-container.bottom div.video{
 	width:520px;
-	height:90px;
+	height:65px;
 	margin: 5px 10px 13px 4px;
 }
 
@@ -64,17 +64,19 @@
 }
 
 .preview-container.bottom .video .thumb{
+	background-size: 90px auto;
     float: left;
-    height: 90px;
-    margin: 0 10px 13px 0;
+    height: 70px;
+    //margin: 0 10px 13px 0;
     position: absolute;
-    width: 120px;
+    width: 90px;
 	cursor:pointer;
 }
 
 .preview-container.bottom .video .details{
 	position: absolute;
-	left: 125px;
+	left: 105px;
+	max-height: 65px;
 }
 
 .preview-container.bottom .video .details .title
