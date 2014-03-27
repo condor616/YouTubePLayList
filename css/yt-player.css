@@ -76,6 +76,7 @@ body{
 .preview-container.bottom .video .details{
 	position: absolute;
 	left: 105px;
+	top: 3px;
 	max-height: 65px;
 }
 
@@ -83,8 +84,15 @@ body{
 {
 	display: block;
 	width:auto;
-	margin-top: 8px;
+	margin-top: 2px;
 	
+}
+
+.preview-container.bottom .video .details .duration
+{
+	display: block;
+	width:auto;	
+	color:grey;
 }
 
 .preview-container.bottom .video.last-item{

@@ -30,7 +30,7 @@ var thumbs = {
 			
 			var video = $('div.preview-container');
 			
-			video.append("<div class=\"video\" id=\" " + videos[i] + "\"><div class=\"thumb\"></div><div class=\"details\"><span class=\"title\"></span></div></div>");
+			video.append("<div class=\"video\" id=\" " + videos[i] + "\"><div class=\"thumb\"></div><div class=\"details\"><span class=\"duration\"></span><span class=\"title\"></span></div></div>");
 			
 			var videoId = videos[i];		
 			thumbsUrl[i] = "http://img.youtube.com/vi/" + videoId + "/default.jpg";
@@ -54,7 +54,9 @@ var thumbs = {
 					thumbs.durations[i] = info.data.duration;
 					thumbs.titles[i] = info.data.title;
 					thumbs.titles[counter++] = info.data.title;
-					$('div.preview-container div.video:eq('+i+')').find('div.details span.title').html(thumbs.convertTime(thumbs.durations[i]) +"<br />"+ thumbs.titles[i]);
+					
+					$('div.preview-container div.video:eq('+i+')').find('div.details span.duration').html(thumbs.convertTime(thumbs.durations[i]));
+					$('div.preview-container div.video:eq('+i+')').find('div.details span.title').html(thumbs.titles[i]);
 				},
 					error: function(jqXHR, textStatus, errorThrown) {
         			console.log(jqXHR.getResponseHeader("content-type"));
