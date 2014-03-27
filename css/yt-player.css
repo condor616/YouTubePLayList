@@ -19,7 +19,7 @@ body{
 }
 
 .container .video-container.wide{
-	
+	width:560px;
 }
 
 .container .preview-container.right{

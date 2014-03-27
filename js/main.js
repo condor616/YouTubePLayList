@@ -75,7 +75,7 @@ var thumbs = {
             	
 				$(this).click(
 						function(){
-								$('div.video-container').find('iframe').attr("src","http://www.youtube.com/embed/"+videos[index]);				
+								$('div.video-container').find('iframe').attr("src","http://www.youtube.com/embed/"+videos[index]+"?autoplay=1");				
 						}
 				);
 				console.log(index,element);
