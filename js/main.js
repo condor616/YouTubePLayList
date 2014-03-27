@@ -39,7 +39,7 @@ var thumbs = {
 				async: false,
 				crossDomain:true,
   				url: "http://gdata.youtube.com/feeds/api/videos/"+videoId+"?v=2&alt=jsonc",
-				dataType: "application/json",
+				dataType: "json",
   				success: function(info){
 					thumbs.titles[i] = info.data.title;
 					thumbs.titles[counter++] = info.data.title;
